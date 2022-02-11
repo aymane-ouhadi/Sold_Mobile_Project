@@ -12,17 +12,11 @@ const initMessages = [
   {
     id: 1,
     title:
-      "T1 sqdqdqsd sqd qsd qsd qsd sqdqsdsq dsqd q fzg erfh dh qdfh qerh yqer",
+      "Aymane Ouhadi",
     description:
-      "D1 sqdqdqsd sqd qsd qsd qsd sqdqsdsq dsqd q fzg erfh dh qdfh qerh yqer",
-    image: require("../assets/mosh.jpg"),
-  },
-  {
-    id: 2,
-    title: "T2",
-    description: "D2",
-    image: require("../assets/mosh.jpg"),
-  },
+      "Hello Mohammed, I'm interested in buying the red jacket you posted",
+    image: require("../assets/default_user.png"),
+  }
 ];
 
 const MessagesScreen = (props) => {

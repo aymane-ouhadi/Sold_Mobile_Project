@@ -1,4 +1,6 @@
 const express = require("express");
+const mongoose = require('mongoose')
+
 const categories = require("./routes/categories");
 const listings = require("./routes/listings");
 const listing = require("./routes/listing");
@@ -18,6 +20,8 @@ app.use(express.json());
 app.use(helmet());
 app.use(compression());
 
+require("dotenv").config()
+
 app.use("/api/categories", categories);
 app.use("/api/listing", listing);
 app.use("/api/listings", listings);
@@ -32,3 +36,18 @@ const port = process.env.PORT || config.get("port");
 app.listen(port, function() {
   console.log(`Server started on port ${port}...`);
 });
+
+
+var dbURL = process.env.CONNECTION_STRING;
+const connectionParams = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true 
+}
+
+mongoose.connect(dbURL,connectionParams)
+    .then( () => {
+        console.log('Connected to database ')
+    })
+    .catch( (err) => {
+        console.error(`Error connecting to the database. \n${err}`);
+    })

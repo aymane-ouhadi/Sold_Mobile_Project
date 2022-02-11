@@ -10,12 +10,12 @@ function ContactSellerForm({ listing }) {
   const handleSubmit = async ({ message }, { resetForm }) => {
     Keyboard.dismiss();
 
-    const result = await messagesApi.send(message, listing.id);
+    // const result = await messagesApi.send(message, listing.id);
 
-    if (!result.ok) {
-      console.log("Error", result);
-      return Alert.alert("Error", "Could not send the message to the seller.");
-    }
+    // if (!result.ok) {
+    //   console.log("Error", result);
+    //   return Alert.alert("Error", "Could not send the message to the seller.");
+    // }
 
     resetForm();
 
